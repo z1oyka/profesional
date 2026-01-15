@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -34,7 +35,10 @@ fun Nointernet(modifier: Modifier = Modifier,
                navController: NavController = rememberNavController()
 ) {
 
-    Row(modifier = Modifier.fillMaxWidth().height(92.dp).background(color = Color(0xFF410FA2))) { }
+    Row(modifier = Modifier
+        .fillMaxWidth()
+        .height(92.dp)
+        .background(color = Color(0xFF410FA2))) { }
     Column(modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(Modifier.height(260.dp))
@@ -50,8 +54,10 @@ fun Nointernet(modifier: Modifier = Modifier,
             )
         Spacer(Modifier.height(300.dp))
         Button(onClick = {navController.navigate("splash")},
-            modifier = Modifier.padding(horizontal = 20.dp).fillMaxWidth().
-            height(56.dp),
+            modifier = Modifier
+                .padding(horizontal = 20.dp)
+                .fillMaxWidth()
+                .height(56.dp),
             shape = RoundedCornerShape(10.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5B7AFC))) {
             Text("Check again",
@@ -61,4 +67,11 @@ fun Nointernet(modifier: Modifier = Modifier,
         }
     }
     
+}
+
+@Preview
+@Composable
+private fun NointernetPrev() {
+    Nointernet()
+
 }

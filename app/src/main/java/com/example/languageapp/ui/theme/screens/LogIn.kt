@@ -42,6 +42,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -63,7 +64,9 @@ fun LogIn(modifier: Modifier = Modifier,
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically){
         Button(onClick = {},
-            modifier = Modifier.padding(start = 10.dp, top = 25.dp).size(20.dp),
+            modifier = Modifier
+                .padding(start = 10.dp, top = 25.dp)
+                .size(20.dp),
             contentPadding = PaddingValues(0.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent)
         ) {Image(painter = painterResource(R.drawable.back),
@@ -83,7 +86,7 @@ fun LogIn(modifier: Modifier = Modifier,
     Column(modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(Modifier.height(200.dp))
-        Image(painter = painterResource(R.drawable.book),
+        Image(painter = painterResource(R.drawable.learathome),
             contentDescription = "",
             modifier = Modifier.size(105.dp,82.dp))
         Text("For free, join now and \nstart learning",
@@ -166,8 +169,10 @@ fun LogIn(modifier: Modifier = Modifier,
         Spacer(Modifier.height(40.dp))
 
         Button(onClick = {},
-            modifier = Modifier.padding(horizontal = 20.dp).fillMaxWidth().
-            height(56.dp),
+            modifier = Modifier
+                .padding(horizontal = 20.dp)
+                .fillMaxWidth()
+                .height(56.dp),
             shape = RoundedCornerShape(10.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5B7AFC))) {
             Text("Login",
@@ -186,9 +191,18 @@ fun LogIn(modifier: Modifier = Modifier,
                 fontSize = 16.sp,
                 color = Color(0xFF5B7AFC),
                 fontWeight = FontWeight.Medium,
-                modifier = Modifier.clickable{
-                    navController.navigate("signup")
-                }.padding(start = 3.dp))
+                modifier = Modifier
+                    .clickable {
+                        navController.navigate("signup")
+                    }
+                    .padding(start = 3.dp))
         }
 
 }}
+
+@Preview
+@Composable
+private fun LoginPrev() {
+    LogIn()
+
+}

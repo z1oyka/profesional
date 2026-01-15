@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -29,7 +30,7 @@ import com.example.languageapp.ui.theme.interFontFamily
 fun SplashScreen(modifier: Modifier = Modifier,
                  navController: NavController = rememberNavController()
 ) {
-    Column(modifier = Modifier.clickable{navController.navigate("onboard1")}.fillMaxSize().background(color = Color(0xFF410FA2)),
+    Column(modifier = Modifier.clickable{navController.navigate("onboard")}.fillMaxSize().background(color = Color(0xFF410FA2)),
         horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(Modifier.height(300.dp))
         Image(painter = painterResource(R.drawable.book),
@@ -45,5 +46,11 @@ fun SplashScreen(modifier: Modifier = Modifier,
         )
     }
 
+
+}
+@Preview
+@Composable
+private fun SplashPrev() {
+    SplashScreen()
 
 }

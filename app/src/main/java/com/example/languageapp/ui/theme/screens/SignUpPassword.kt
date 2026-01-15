@@ -34,6 +34,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -56,7 +57,9 @@ fun SignUpPassword(modifier: Modifier = Modifier,
 
 
         Button(onClick = {},
-            modifier = Modifier.padding(start = 10.dp, top = 25.dp).size(20.dp),
+            modifier = Modifier
+                .padding(start = 10.dp, top = 25.dp)
+                .size(20.dp),
             contentPadding = PaddingValues(0.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent)
         ) {Image(painter = painterResource(R.drawable.back),
@@ -170,7 +173,9 @@ fun SignUpPassword(modifier: Modifier = Modifier,
 
 
 
-            Row(modifier = Modifier.fillMaxWidth().padding(start = 20.dp), verticalAlignment = Alignment.CenterVertically) {
+            Row(modifier = Modifier
+                .fillMaxWidth()
+                .padding(start = 20.dp), verticalAlignment = Alignment.CenterVertically) {
                 Image(painter = painterResource(R.drawable.square),
                     contentDescription = "")
                 Spacer(Modifier.width(3.dp))
@@ -182,7 +187,9 @@ fun SignUpPassword(modifier: Modifier = Modifier,
 
         }
 
-        Row(modifier = Modifier.fillMaxWidth().padding(start = 20.dp)) {Text("the Rules ",
+        Row(modifier = Modifier
+            .fillMaxWidth()
+            .padding(start = 20.dp)) {Text("the Rules ",
             fontSize = 17.sp,
             fontFamily = interFontFamily,
             color = Color(0xFF6E8AFC)
@@ -200,8 +207,10 @@ fun SignUpPassword(modifier: Modifier = Modifier,
         Spacer(Modifier.height(580.dp))
 
         Button(onClick = {},
-            modifier = Modifier.padding(horizontal = 20.dp).fillMaxWidth().
-            height(56.dp),
+            modifier = Modifier
+                .padding(horizontal = 20.dp)
+                .fillMaxWidth()
+                .height(56.dp),
             shape = RoundedCornerShape(10.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5B7AFC))) {
             Text("Signup",
@@ -225,13 +234,22 @@ fun SignUpPassword(modifier: Modifier = Modifier,
                 fontSize = 16.sp,
                 color = Color(0xFF5B7AFC),
                 fontWeight = FontWeight.Medium,
-                modifier = Modifier.clickable{
-                    navController.navigate("login")
-                }.padding(start = 3.dp))
+                modifier = Modifier
+                    .clickable {
+                        navController.navigate("login")
+                    }
+                    .padding(start = 3.dp))
         }
     }
 
 
 
+
+}
+
+@Preview
+@Composable
+private fun PasswordPrev() {
+    SignUpPassword()
 
 }

@@ -7,9 +7,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.languageapp.ui.theme.screens.LogIn
 import com.example.languageapp.ui.theme.screens.Nointernet
-import com.example.languageapp.ui.theme.screens.OnBoard1
-import com.example.languageapp.ui.theme.screens.OnBoard2
-import com.example.languageapp.ui.theme.screens.OnBoard3
+import com.example.languageapp.ui.theme.screens.OnBoard
+
 import com.example.languageapp.ui.theme.screens.SignUp
 import com.example.languageapp.ui.theme.screens.SignUpPassword
 import com.example.languageapp.ui.theme.screens.SplashScreen
@@ -24,9 +23,9 @@ fun Navigation(modifier: Modifier = Modifier) {
     NavHost(navController = navController, startDestination = "noiternet") {
         composable("noiternet") { Nointernet(navController = navController) }
         composable("splash") { SplashScreen(navController = navController) }
-        composable("onboard1") { OnBoard1(navController = navController) }
-        composable("onboard2") { OnBoard2(navController = navController) }
-        composable("onboard3") { OnBoard3(navController = navController) }
+
+        composable("onboard") { OnBoard(navController = navController) }
+
         composable("signup") { SignUp(navController = navController) }
         composable("signuppassword") { SignUpPassword(navController = navController) }
         composable("login") { LogIn(navController = navController) }
