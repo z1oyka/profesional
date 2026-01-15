@@ -24,11 +24,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.languageapp.R
 import com.example.languageapp.ui.theme.interFontFamily
 
 @Composable
-fun Profile(modifier: Modifier = Modifier) {
+fun Profile(modifier: Modifier = Modifier,
+            navController: NavController = rememberNavController()
+) {
 
 
     Row(modifier = Modifier

@@ -63,7 +63,7 @@ fun LogIn(modifier: Modifier = Modifier,
         .background(Color(0xFF410FA2)),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically){
-        Button(onClick = {},
+        Button(onClick = {navController.navigate("onboard")},
             modifier = Modifier
                 .padding(start = 10.dp, top = 25.dp)
                 .size(20.dp),
@@ -168,7 +168,7 @@ fun LogIn(modifier: Modifier = Modifier,
         }
         Spacer(Modifier.height(40.dp))
 
-        Button(onClick = {},
+        Button(onClick = {navController.navigate("main")},
             modifier = Modifier
                 .padding(horizontal = 20.dp)
                 .fillMaxWidth()

@@ -24,13 +24,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.languageapp.R
 import com.example.languageapp.ui.theme.interFontFamily
 
 @Composable
-fun Eror(modifier: Modifier = Modifier) {
+fun Eror(modifier: Modifier = Modifier,
+         navController: NavController = rememberNavController()
+) {
 
 
     Row(modifier = Modifier
@@ -40,8 +45,10 @@ fun Eror(modifier: Modifier = Modifier) {
         verticalAlignment = Alignment.CenterVertically,
     ){
 
-        Button(onClick = {},
-            modifier = Modifier.padding(top = 25.dp, start = 10.dp).size(17.dp,27.dp),
+        Button(onClick = {navController.navigate("main")},
+            modifier = Modifier
+                .padding(top = 25.dp, start = 10.dp)
+                .size(17.dp, 27.dp),
             contentPadding = PaddingValues(0.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color.Transparent)
         ) {
@@ -94,6 +101,7 @@ fun Eror(modifier: Modifier = Modifier) {
 
 
         Button(onClick = {
+            navController.navigate("main")
 
 
 
@@ -110,6 +118,7 @@ fun Eror(modifier: Modifier = Modifier) {
             )}
         Spacer(Modifier.height(11.dp))
         Button(onClick = {
+            navController.navigate("animals")
 
 
 
@@ -125,5 +134,12 @@ fun Eror(modifier: Modifier = Modifier) {
                 fontFamily = interFontFamily
             )}
     }
+
+}
+
+@Preview
+@Composable
+private fun ErorAnimalPrev() {
+    Eror()
 
 }

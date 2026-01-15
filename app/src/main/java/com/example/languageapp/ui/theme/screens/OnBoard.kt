@@ -1,6 +1,7 @@
 package com.example.languageapp.ui.theme.screens
 
 import android.media.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -22,6 +23,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -104,11 +106,14 @@ fun OnBoard(modifier: Modifier = Modifier,
                         scope.launch {
                             if (page < 2) {
                                 pagerState.animateScrollToPage(page + 1)
-                            } else{}}
+                            } else{navController.navigate("select")}}
 
                         },
                         modifier =
-                            Modifier.padding(horizontal = 20.dp).fillMaxWidth().height(56.dp),
+                            Modifier
+                                .padding(horizontal = 20.dp)
+                                .fillMaxWidth()
+                                .height(56.dp),
                         shape = RoundedCornerShape(10.dp),
                         colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5B7AFC))) {
                         Text(
@@ -122,7 +127,7 @@ fun OnBoard(modifier: Modifier = Modifier,
                             fontSize = 15.sp,
                             fontFamily = interFontFamily,
                             fontWeight = FontWeight.Medium,
-                            modifier = Modifier.padding(top = 20.dp)
+                            modifier = Modifier.padding(top = 20.dp).clickable{navController.navigate("select")}
                         )
 
 
@@ -132,5 +137,12 @@ fun OnBoard(modifier: Modifier = Modifier,
             }
 
     
+}
+
+@Preview
+@Composable
+private fun OnboardPrev() {
+    OnBoard()
+
 }
 

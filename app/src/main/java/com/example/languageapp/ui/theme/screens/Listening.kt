@@ -2,7 +2,6 @@ package com.example.languageapp.ui.theme.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -17,12 +16,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -37,11 +31,11 @@ import com.example.languageapp.R
 import com.example.languageapp.ui.theme.interFontFamily
 
 @Composable
-fun Animals(modifier: Modifier = Modifier,
-            navController: NavController = rememberNavController()
+fun Listening(modifier: Modifier = Modifier,
+              navController: NavController = rememberNavController()
 ) {
-    var animal by remember { mutableStateOf("") }
-    val lowanimal = animal.lowercase()
+
+
     Row(modifier = Modifier
         .fillMaxWidth()
         .height(102.dp)
@@ -63,7 +57,7 @@ fun Animals(modifier: Modifier = Modifier,
         Spacer(Modifier.width(20.dp))
 
 
-        Text("Guess the animal",
+        Text("Listening",
             fontSize = 22.sp,
             fontFamily = interFontFamily,
             fontWeight = FontWeight.Medium,
@@ -75,62 +69,49 @@ fun Animals(modifier: Modifier = Modifier,
     }
 
     Column(modifier = Modifier.fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-
+        horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(Modifier.height(140.dp))
 
-        Image(painter = painterResource(R.drawable.racoon),
-            contentDescription = "",
-            modifier = Modifier.size(328.dp))
+        Text("cucumber",
+            fontSize = 22.sp,
+            fontFamily = interFontFamily,
+            fontWeight = FontWeight.Medium)
+
+        Text("[ 'kju:kʌmbə ]",
+            fontSize = 17.sp,
+            fontFamily = interFontFamily)
+
+        Text("Please press button and say this \nword. Our service will check \nyour pronunciation ",
+            fontSize = 22.sp,
+            fontFamily =interFontFamily,
+            fontWeight = FontWeight.Medium,
+            modifier = Modifier.padding(top = 50.dp))
 
 
-
-        Spacer(Modifier.height(15.dp))
-        Row(modifier = Modifier.width(320.dp)) {
-            Text("Write who is on image",
-                fontFamily = interFontFamily,
-                fontSize = 15.sp)
-        }
-        TextField(value = animal,
-            onValueChange = {animal = it},
-            modifier = Modifier
-                .padding(top = 10.dp)
-                .width(328.dp),
-            shape = RoundedCornerShape(12.dp)
-        )
 
         Button(onClick = {
-            if (animal == "Racoon") navController.navigate("succesanimal")
-            else navController.navigate("eror")
-
-
-
+            navController.navigate("listening2")
         },
             modifier = Modifier
                 .padding(top = 20.dp)
 
-                .width(328.dp)
-                .height(56.dp),
+                .height(56.dp)
+                .fillMaxWidth()
+                .padding(horizontal = 30.dp),
             shape = RoundedCornerShape(10.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5B7AFC))) {
-            Text("Check",
+            Text("Check my speech",
                 fontSize = 20.sp,
                 fontFamily = interFontFamily
             )}
-
-
-
-
-
-
     }
 
+    
 }
 
 @Preview
 @Composable
-private fun AnimalPrev() {
-    Animals()
+private fun ListeninngPrev() {
+    Listening()
 
 }

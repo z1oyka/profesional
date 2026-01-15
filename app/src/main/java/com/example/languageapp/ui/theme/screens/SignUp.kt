@@ -52,7 +52,7 @@ fun SignUp(modifier: Modifier = Modifier,
         verticalAlignment = Alignment.CenterVertically){
 
 
-        Button(onClick = {},
+        Button(onClick = {navController.navigate("login")},
             modifier = Modifier
                 .padding(start = 10.dp, top = 25.dp)
                 .size(20.dp),

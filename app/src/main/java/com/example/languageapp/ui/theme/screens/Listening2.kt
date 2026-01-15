@@ -2,7 +2,7 @@ package com.example.languageapp.ui.theme.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -18,6 +18,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -28,6 +29,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -37,11 +39,12 @@ import com.example.languageapp.R
 import com.example.languageapp.ui.theme.interFontFamily
 
 @Composable
-fun Animals(modifier: Modifier = Modifier,
-            navController: NavController = rememberNavController()
+fun Listening2(modifier: Modifier = Modifier,
+               navController: NavController = rememberNavController()
 ) {
-    var animal by remember { mutableStateOf("") }
-    val lowanimal = animal.lowercase()
+    var cucumber by remember { mutableStateOf("") }
+
+
     Row(modifier = Modifier
         .fillMaxWidth()
         .height(102.dp)
@@ -49,7 +52,7 @@ fun Animals(modifier: Modifier = Modifier,
         verticalAlignment = Alignment.CenterVertically,
     ){
 
-        Button(onClick = {navController.navigate("main")},
+        Button(onClick = {},
             modifier = Modifier
                 .padding(top = 25.dp, start = 10.dp)
                 .size(17.dp, 27.dp),
@@ -63,7 +66,7 @@ fun Animals(modifier: Modifier = Modifier,
         Spacer(Modifier.width(20.dp))
 
 
-        Text("Guess the animal",
+        Text("Listening",
             fontSize = 22.sp,
             fontFamily = interFontFamily,
             fontWeight = FontWeight.Medium,
@@ -75,50 +78,60 @@ fun Animals(modifier: Modifier = Modifier,
     }
 
     Column(modifier = Modifier.fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-
+        horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(Modifier.height(140.dp))
 
-        Image(painter = painterResource(R.drawable.racoon),
-            contentDescription = "",
-            modifier = Modifier.size(328.dp))
+        Text("cucumber",
+            fontSize = 22.sp,
+            fontFamily = interFontFamily,
+            fontWeight = FontWeight.Medium)
+
+        Text("[ 'kju:kʌmbə ]",
+            fontSize = 17.sp,
+            fontFamily = interFontFamily)
+
+        Text("Please press button and say this \nword. Our service will check \nyour pronunciation ",
+            fontSize = 22.sp,
+            fontFamily =interFontFamily,
+            fontWeight = FontWeight.Medium,
+            modifier = Modifier.padding(top = 50.dp))
 
 
 
-        Spacer(Modifier.height(15.dp))
-        Row(modifier = Modifier.width(320.dp)) {
-            Text("Write who is on image",
+        Row(modifier = Modifier
+            .fillMaxWidth()
+            .padding(top = 5.dp, start = 30.dp)){
+            Text(
+                "Your result",
+                fontSize = 15.sp,
                 fontFamily = interFontFamily,
-                fontSize = 15.sp)
+                color = Color(0xFF363B44),
+                textAlign = TextAlign.Start)
         }
-        TextField(value = animal,
-            onValueChange = {animal = it},
+        TextField(value = cucumber,
+            onValueChange = {cucumber},
+            shape = RoundedCornerShape(20.dp),
             modifier = Modifier
-                .padding(top = 10.dp)
-                .width(328.dp),
-            shape = RoundedCornerShape(12.dp)
+                .fillMaxWidth()
+                .padding(horizontal = 30.dp)
+                .padding(top = 5.dp),
+            colors = TextFieldDefaults.colors(unfocusedContainerColor = Color(0xFFF1F1F2),
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent,
+                focusedTextColor = Color(0xFFED5DA7),
+                unfocusedTextColor = Color(0xFFED5DA7))
+
+
+
         )
 
-        Button(onClick = {
-            if (animal == "Racoon") navController.navigate("succesanimal")
-            else navController.navigate("eror")
+        Spacer(Modifier.height(200.dp))
 
 
-
-        },
-            modifier = Modifier
-                .padding(top = 20.dp)
-
-                .width(328.dp)
-                .height(56.dp),
-            shape = RoundedCornerShape(10.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5B7AFC))) {
-            Text("Check",
-                fontSize = 20.sp,
-                fontFamily = interFontFamily
-            )}
-
+        Image(painter = painterResource(R.drawable.voice),
+            contentDescription = "",
+            modifier = Modifier.size(160.dp)
+                .clickable{})
 
 
 
@@ -126,11 +139,12 @@ fun Animals(modifier: Modifier = Modifier,
 
     }
 
+
 }
 
 @Preview
 @Composable
-private fun AnimalPrev() {
-    Animals()
+private fun Listening2Prev() {
+    Listening2()
 
 }

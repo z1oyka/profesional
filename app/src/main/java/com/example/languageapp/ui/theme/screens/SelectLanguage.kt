@@ -26,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -72,7 +73,10 @@ fun SelectLanguage(modifier: Modifier = Modifier,
         Spacer(Modifier.height(20.dp))
 
 
-        Button(modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp).padding(top = 8.dp)
+        Button(modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp)
+            .padding(top = 8.dp)
             .height(67.dp),
             onClick = {firstselect = !firstselect
                       secondselect = true
@@ -95,7 +99,10 @@ fun SelectLanguage(modifier: Modifier = Modifier,
 
         }
 
-        Button(modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp).padding(top = 15.dp)
+        Button(modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp)
+            .padding(top = 15.dp)
             .height(67.dp),
             onClick = {firstselect = true
                 secondselect = !secondselect
@@ -116,7 +123,10 @@ fun SelectLanguage(modifier: Modifier = Modifier,
 
 
         }
-        Button(modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp).padding(top = 15.dp)
+        Button(modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp)
+            .padding(top = 15.dp)
             .height(67.dp),
             onClick = {firstselect = true
                 secondselect = true
@@ -137,7 +147,10 @@ fun SelectLanguage(modifier: Modifier = Modifier,
 
 
         }
-        Button(modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp).padding(top = 15.dp)
+        Button(modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp)
+            .padding(top = 15.dp)
             .height(67.dp),
             onClick = {firstselect = true
                 secondselect = true
@@ -159,7 +172,10 @@ fun SelectLanguage(modifier: Modifier = Modifier,
 
         }
 
-        Button(modifier = Modifier.fillMaxWidth().padding(horizontal = 20.dp).padding(top = 15.dp)
+        Button(modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 20.dp)
+            .padding(top = 15.dp)
             .height(67.dp),
             onClick = {firstselect = true
                 secondselect = true
@@ -183,11 +199,15 @@ fun SelectLanguage(modifier: Modifier = Modifier,
         Spacer(Modifier.height(230.dp))
         Button(
             onClick = {
+                navController.navigate("login")
 
 
             },
             modifier =
-                Modifier.padding(horizontal = 20.dp).fillMaxWidth().height(56.dp),
+                Modifier
+                    .padding(horizontal = 20.dp)
+                    .fillMaxWidth()
+                    .height(56.dp),
             shape = RoundedCornerShape(10.dp),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5B7AFC))) {
             Text("Choose",
@@ -198,5 +218,12 @@ fun SelectLanguage(modifier: Modifier = Modifier,
         }
 
     }
+
+}
+
+@Preview
+@Composable
+private fun SelectPrev() {
+    SelectLanguage()
 
 }

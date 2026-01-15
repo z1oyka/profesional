@@ -15,6 +15,9 @@ import com.example.languageapp.ui.theme.LanguageappTheme
 import com.example.languageapp.ui.theme.Navigation
 import com.example.languageapp.ui.theme.screens.Animals
 import com.example.languageapp.ui.theme.screens.Eror
+import com.example.languageapp.ui.theme.screens.Listening
+import com.example.languageapp.ui.theme.screens.Listening2
+import com.example.languageapp.ui.theme.screens.Listening3
 import com.example.languageapp.ui.theme.screens.LogIn
 import com.example.languageapp.ui.theme.screens.MainScreen
 import com.example.languageapp.ui.theme.screens.Nointernet
@@ -36,8 +39,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             LanguageappTheme {
 
-                WordPractice()
-
+                Listening3()
             }
         }
     }

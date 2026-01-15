@@ -56,7 +56,7 @@ fun SignUpPassword(modifier: Modifier = Modifier,
         verticalAlignment = Alignment.CenterVertically){
 
 
-        Button(onClick = {},
+        Button(onClick = {navController.navigate("signup")},
             modifier = Modifier
                 .padding(start = 10.dp, top = 25.dp)
                 .size(20.dp),
@@ -206,7 +206,7 @@ fun SignUpPassword(modifier: Modifier = Modifier,
         horizontalAlignment = Alignment.CenterHorizontally) {
         Spacer(Modifier.height(580.dp))
 
-        Button(onClick = {},
+        Button(onClick = {navController.navigate("main")},
             modifier = Modifier
                 .padding(horizontal = 20.dp)
                 .fillMaxWidth()

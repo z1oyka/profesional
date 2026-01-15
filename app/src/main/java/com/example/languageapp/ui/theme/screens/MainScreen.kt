@@ -2,6 +2,7 @@ package com.example.languageapp.ui.theme.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -28,12 +29,16 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.languageapp.R
 import com.example.languageapp.ui.theme.interFontFamily
 import java.nio.file.WatchEvent
 
 @Composable
-fun MainScreen(modifier: Modifier = Modifier) {
+fun MainScreen(modifier: Modifier = Modifier,
+               navController: NavController = rememberNavController()
+) {
 
     Row(modifier = Modifier
         .fillMaxWidth()
@@ -45,7 +50,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
             Spacer(Modifier.height(20.dp))
             Image(painter = painterResource(R.drawable.round),
                 contentDescription = "",
-                modifier = Modifier.size(54.dp))
+                modifier = Modifier.clickable{navController.navigate("profile")}.size(54.dp))
 
 
 
@@ -173,7 +178,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
 
         Row(modifier = Modifier.padding(horizontal = 20.dp).fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween) {
-            Button(onClick = {},
+            Button(onClick = {navController.navigate("animals")},
                 modifier = Modifier.size(153.dp,117.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF5A79F9)),
                 shape = RoundedCornerShape(20.dp),
@@ -211,7 +216,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
 
         Row(modifier = Modifier.padding(horizontal = 20.dp).fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween) {
-            Button(onClick = {},
+            Button(onClick = {navController.navigate("listening")},
                 modifier = Modifier.size(153.dp,117.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFF36300)),
                 shape = RoundedCornerShape(20.dp),
